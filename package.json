@@ -2,8 +2,9 @@
   "name": "foodvilla",
   "version": "1.0.0",
   "description": "food ordering app",
-  "main": "App.js",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "author": "Rohan",
@@ -13,7 +14,11 @@
     "process": "^0.11.10"
   },
   "dependencies": {
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "browsersList": [
+    "last 2 versions"
+  ]
 }
