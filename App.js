@@ -1,15 +1,82 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-// Warning: You are importing createRoot from "react-dom" which is not supported. 
-// You should instead import it from "react-dom/client".
+import React from "react";
+import ReactDOM from "react-dom/client";
+/**
+      Header
+      -logo
+      -nav items
+      -cart
+      Body
+      -searchbar
+      -restrauntList
+        -RestruntCard
+          -image
+          -name
+          -rating
+          -cusines
+      Footer
+      -links
+      copyright
+  
+  */
+const Title = () => (
+  <a href="/">
+  <img
+    className="logo"
+    alt="logo"
+    src="https://yt3.googleusercontent.com/ytc/AL5GRJXudT76175T4x4n7eslWM1YkgNLHDSSqfXGoadl=s900-c-k-c0x00ffffff-no-rj"
+  ></img>
+  </a>
+);
 
-const heading = React.createElement("h1", { id: "title" }, "heading 1");
+const Header = () => {
+  return (
+    <div className="header">
+      <Title />
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
 
-      const heading2 = React.createElement("h2", { id: "title" }, "heading 2");
+const RestrauntCard =()=>{
+  return(
+    <div className="card">
+      <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/jmfk6nhytgaifkox7rcf"/>
+      <h2>Domino's</h2>
+      <h3>Pizzas, Italian</h3>
+      <h4>4.3 stars</h4>
+    </div>
+  )
+}
 
-      const container = React.createElement("div", { id: "container" }, [
-        heading,
-        heading2,
-      ]);
-      const root = ReactDOM.createRoot(document.getElementById("root"));
-      root.render(container);
+const Body=()=>{
+  return(
+    <div className="restaurent-list">
+      <RestrauntCard/>
+    </div>
+  )
+}
+
+const Footer=()=>{
+  return(
+    <h4>footer</h4>
+  )
+}
+
+const AppLayout = () => {
+  return (
+    <>
+    <Header/>
+    <Body/>
+    <Footer/>
+    </>
+  );
+};
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<AppLayout />);
