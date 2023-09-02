@@ -1,11 +1,11 @@
-import {IMG_CDN_URL} from "../utils/constants"
+import {CDN_URL} from "../utils/constants"
 
 const RestaurantCard = ({name, cuisines,cloudinaryImageId,sla,costForTwo,avgRating}) => {
     return (
       <div className="card">
         <img
           src={
-            IMG_CDN_URL +
+            CDN_URL +
             cloudinaryImageId
           }
         />

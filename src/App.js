@@ -13,7 +13,8 @@ const AppLayout = () => {
   return (
     <>
       <Header />
-      {/**whenever there is a change in the path this outlet will be filled with the children according to the path */}
+      {/**whenever there is a change in the path this outlet
+       *  will be filled with the children according to the path */}
       <Outlet/> {/**this outlet cant be seen in html */}
       <Footer />
     </>
@@ -24,11 +25,13 @@ const appRouter = createBrowserRouter([
   { 
     path:"/", 
     element:<AppLayout/>,
+    /**children routes */
     children: [
       { path:"/", element:<Body/>},
       { path:"/about", element:<About/>},
       { path:"/contact", element:<Contact/>},
-      { path:"/restaurants/:resId", element:<RestaurantMenu/>},
+      { path:"/restaurants/:resId", element:<RestaurantMenu/>},/**resId is dynamic piece of id 
+                                                              which has been attached inside URL */
     ],
     errorElement:<Error/>
   },
